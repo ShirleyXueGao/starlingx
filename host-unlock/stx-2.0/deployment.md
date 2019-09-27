@@ -69,7 +69,7 @@ ping 8.8.8.8
 ```
 # 系统安装后根目录的空间比较小，需要先创建个临时的分区存放系统需要的容器镜像文件
 sudo fdisk /dev/sdb
-# 创建最少50G大小的分区，分区创建不收省略
+# 创建最少50G大小的分区，分区创建的步骤省略，自行百度
 # 挂载分区
 mkdir -p /home/sysadmin/images
 sudo mkfs.ext4 /dev/sdb1
@@ -167,7 +167,7 @@ Password:
 
 - 可以参考官方教程：https://docs.starlingx.io/deploy_install_guides/index.htmlz
 
-- 或者通过配置脚本（未经过调试，请勿轻易使用）
+- 或者通过配置脚本，simplex没问题，其他部署方式还未验证
 ```
 # 在能连接互联网的主机上下载脚本文件，并拷贝到StarlingX主机
 wget https://raw.githubusercontent.com/zhangkunpeng/starlingx/master/host-unlock/stx-2.0/unluck-host.sh
@@ -177,5 +177,5 @@ scp unlock-host.sh sysadmin@<ip>:~/
 sh unlock-host.sh
 # 如果是带有专有存储节点的，加上参数 -c storage
 # 简单的交互式方式进行配置
-# 配置脚本只提供简单的必要配置，其他的配置可参与社区讨论
+# 配置脚本只提供简单的必要配置，其他的配置联系作者讨论
 ```
